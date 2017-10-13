@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/previous_order_item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_weight="60"
+        android:padding="2dp"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="16sp"
+        tools:text="Lorem Ipsum" />
+
+    <com.iarcuschin.simpleratingbar.SimpleRatingBar
+        android:id="@+id/previous_order_item_rating_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_weight="40"
+        android:clickable="true"
+        android:padding="2dp"
+        app:srb_backgroundColor="@color/colorWhite"
+        app:srb_borderColor="@color/colorAccent"
+        app:srb_fillColor="@color/colorAccent"
+        app:srb_numberOfStars="5"
+        app:srb_starBorderWidth="2"
+        app:srb_starCornerRadius="0"
+        app:srb_stepSize="1" />
+
+
+</LinearLayout>

@@ -1,0 +1,213 @@
+
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_activity_coordinator_layout"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:elevation="10dp">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- HEADER -->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimary"
+                        android:orientation="vertical"
+                        tools:context="com.example.android.saddacampus.MainActivity">
+
+                        <RelativeLayout
+                            android:id="@+id/toolbar_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="10dp">
+
+                            <include layout="@layout/toolbar" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/colorPrimary"
+                            android:text="ORDER BY CUISINE "
+                            android:textColor="@color/textColorPrimary"
+                            android:textStyle="bold"/>
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/category_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimaryDark" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/main_activity_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:elevation="5dp"
+            app:tabBackground="@color/colorPrimary"
+            app:tabSelectedTextColor="@color/textColorPrimary"
+            app:tabTextColor="@color/colorGray" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_activity_view_pager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.saddacampus.app.app.Fab
+        android:id="@+id/fab"
+        style="@style/Widget.MaterialSheetFab.Fab"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/fab_margin" />
+
+    <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <io.codetail.widget.RevealLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end|bottom"
+        android:orientation="vertical">
+
+        <!-- Sheet that contains your items -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/fab_sheet"
+            style="@style/Widget.MaterialSheetFab.Sheet">
+
+            <!-- Sheet items -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Profile -->
+                <TextView
+                    android:id="@+id/fab_sheet_item_profile"
+                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                    android:drawableLeft="@drawable/fab_item_profile"
+                    android:drawableStart="@drawable/user_drawable"
+                    android:gravity="center_vertical"
+                    android:text="@string/fab_item_profile" />
+
+                <!-- Favourites -->
+                <TextView
+                    android:id="@+id/fab_sheet_item_favourites"
+                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                    android:drawableStart="@drawable/favourite_drawable"
+                    android:gravity="center_vertical"
+                    android:text="@string/fab_item_favourites" />
+
+                <!-- Previous Orders -->
+                <TextView
+                    android:id="@+id/fab_sheet_item_previous_orders"
+                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                    android:drawableStart="@drawable/previous_fab_drawable"
+                    android:gravity="center_vertical"
+                    android:text="@string/fab_item_previous_orders" />
+
+                <!-- Share -->
+                <TextView
+                    android:id="@+id/fab_sheet_item_share"
+                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                    android:drawableStart="@drawable/share_drawable"
+                    android:gravity="center_vertical"
+                    android:text="Share Us" />
+
+
+                <!-- Rate -->
+                <TextView
+                    android:id="@+id/fab_sheet_item_rate_us"
+                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                    android:drawableStart="@drawable/rate_us"
+                    android:gravity="center_vertical"
+                    android:text="Rate us" />
+
+
+                <!-- Support -->
+                <TextView
+                    android:id="@+id/fab_sheet_item_contact_support"
+                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                    android:drawableStart="@drawable/contact_support_drawable"
+                    android:gravity="center_vertical"
+                    android:text="Live Chat" />
+
+                <!-- Cart -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent">
+                    .
+
+                    <TextView
+                        android:id="@+id/fab_sheet_item_go_to_cart"
+                        style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                        android:drawableStart="@drawable/cart_drawable"
+                        android:gravity="center_vertical"
+                        android:text="@string/fab_item_go_to_cart" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </io.codetail.widget.RevealLinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

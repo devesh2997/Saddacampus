@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="100"
+    android:background="@drawable/blank">
+    <!--<com.github.jlmd.animatedcircleloadingview.AnimatedCircleLoadingView
+        android:id="@+id/current_order_circle_loading_view"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+
+        app:animCircleLoadingView_mainColor="@color/colorPurpleLight"
+        app:animCircleLoadingView_secondaryColor="@color/colorPurpleVeryLight"
+        app:animCircleLoadingView_textColor="@android:color/white" />
+-->
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/order_status_text"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPurpleLight">
+
+            <TextView
+                android:id="@+id/order_status_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center_horizontal"
+                android:text="Processing..."
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/processing_order_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/order_status_view"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:elevation="5dp" />
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_below="@+id/order_status_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/current_order_details_cpntainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order ID : "
+                        android:textColor="@color/colorPurpleLight"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/current_order_id_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="TextView"
+                        android:textColor="@color/colorPurpleLight"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorPrimary"
+                    android:paddingBottom="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/current_order_restaurant_image_view"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/current_order_restaurant_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/current_order_restaurant_image_view"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/current_order_restaurant_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/current_order_restaurant_name"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/current_order_restaurant_image_view"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/current_order_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/current_order_payment_mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+
+                <ExpandableListView
+                    android:id="@+id/current_order_item_expandable_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="5dp"
+                    android:isScrollContainer="false" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:elevation="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100"
+        android:gravity="bottom"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+    <Button
+        android:layout_margin="5dp"
+        android:background="@color/colorPurpleLight"
+        android:layout_weight="50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goHome"
+        android:text="Go to home"
+        android:textColor="@color/colorPrimary"/>
+
+        <Button
+            android:layout_margin="5dp"
+            android:background="@color/colorPurpleLight"
+            android:layout_weight="50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="rateUs"
+            android:text="Rate Us"
+            android:textColor="@color/colorPrimary"/>
+    </LinearLayout>
+
+</RelativeLayout>

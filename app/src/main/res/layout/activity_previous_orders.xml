@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme.NoActionBar">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/toolbar_searched_category" />
+    </RelativeLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_below="@+id/toolbar_container"
+        android:id="@+id/coordinator_previous_orders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/previous_orders_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:layout_below="@+id/toolbar_container"/>
+
+        <!--<ProgressBar
+            android:id="@+id/previous_orders_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />-->
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+</RelativeLayout>

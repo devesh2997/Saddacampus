@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPurple">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="25dp"
+        android:text="@string/sign_up_otp_text1"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhiteText"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:text="@string/sign_up_otp_text2"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhiteText"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/otpInput"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="25dp"
+        android:background="@drawable/otp_text_background"
+        android:ems="10"
+        android:hint="@string/enter_otp_hint"
+        android:inputType="number"
+        android:paddingBottom="10dp"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:paddingTop="10dp"
+        android:textAlignment="center" />
+
+    <ViewSwitcher
+        android:id="@+id/otpVerificationSwitcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/otpInput"
+        android:layout_centerHorizontal="true">
+
+        <ImageButton
+            android:id="@+id/verifyOtpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/sign_up_otp_button_background"
+            android:padding="8dp"
+            app:srcCompat="@drawable/sign_up_otp_button" />
+
+        <ProgressBar
+            android:id="@+id/otpVerificationProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </ViewSwitcher>
+
+</RelativeLayout>

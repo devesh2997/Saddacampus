@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.saddacampus.app">
+
+    <uses-sdk android:minSdkVersion="25" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
+    <application
+        android:name="com.saddacampus.app.app.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.saddacampus.app.activity.StartActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.saddacampus.app.activity.SplashActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.saddacampus.app.activity.SignupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name="com.saddacampus.app.activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.saddacampus.app.activity.RateItemDialogActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AlertDialog" />
+        <activity
+            android:name="com.saddacampus.app.activity.itemPopUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PopupAnimation" />
+        <activity
+            android:name="com.saddacampus.app.activity.SearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <!-- Facebook login -->
+        ...
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        ...
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.saddacampus.app.service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.saddacampus.app.service.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".receiver.RatingAlertReceiver">
+        </receiver>
+
+        <activity
+            android:name="com.saddacampus.app.activity.RestaurantMenu"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name="com.saddacampus.app.activity.SubCategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.OfferItems"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.OffersRestaurants"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.FilterMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.SearchedItemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.FavouriteItemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.CartActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.ItemInfoActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.CheckoutActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.ChangePasswordActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.ForgotPasswordEnterMobileActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.SubmitOtpActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.PreviousOrdersActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.PostOrderStatusActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.OrderRatingActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saddacampus.app.activity.NoInternetActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/PopupAnimation" />
+    </application>
+
+</manifest>

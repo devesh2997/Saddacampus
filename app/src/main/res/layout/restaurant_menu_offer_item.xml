@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginTop="4dp"
+    android:orientation="vertical"
+    android:padding="10dp"
+    app:cardBackgroundColor="#FFF"
+    app:cardElevation="2dp">
+
+
+    <RelativeLayout
+        android:id="@+id/restaurant_item_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="8dp">
+
+        <RelativeLayout
+            android:id="@+id/item_info_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/veg"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/veg_icon" />
+
+
+                <TextView
+                    android:id="@+id/restaurant_item_name_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="TextView"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_horizontal|center_vertical"
+                >
+
+                <View
+                    android:id="@+id/scratch_off"
+                    android:layout_width="72dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginTop="14dp"
+                    android:background="#ff0000" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/restaurant_list_separator_top"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:text="\u20B9 150"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_info_view"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/restaurant_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Serverd By: Restaurant Name"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                        android:id="@+id/ratingView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/restaurant_name"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0"
+                        app:srb_borderColor="@color/colorYellow"
+                        app:srb_fillColor="@color/colorYellow"
+                        app:srb_numberOfStars="5"
+                        app:srb_rating="3"
+                        app:srb_starBorderWidth="1"
+                        app:srb_starCornerRadius="0"
+                        app:srb_starSize="14dp"
+                        app:srb_stepSize="0.5" />
+
+                    <TextView
+                        android:id="@+id/ratingCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/ratingView"
+                        android:text="(00)" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+            <ViewSwitcher
+                android:id="@+id/restaurant_item_add_to_cart_switcher"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <RelativeLayout
+                    android:id="@+id/restaurant_item_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorPurpleLight">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="Add"
+                        android:textColor="#fff" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/restaurant_item_quantity_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/rectangle_border"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:id="@+id/restaurant_item_decrease_quantity"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center_horizontal"
+                        android:text="-"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/restaurant_item_quantity"
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textColor="@color/colorPurpleLight"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/restaurant_item_increase_quantity"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center_horizontal"
+                        android:text="+"
+                        android:textColor="@color/colorPurpleLight"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+
+            </ViewSwitcher>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/offer_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/relativeLayout"
+            android:layout_alignEnd="@+id/relativeLayout"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="110dp"
+            android:text="\u20B9 150"
+            android:textColor="#FF0000"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

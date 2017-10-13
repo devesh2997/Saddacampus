@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/checkout_coordinator">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/delivery_details_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/Delivery_details"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/delivery_details_text_view"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:weightSum="100">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="30"
+                                android:text="@string/name"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/user_name_view"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="70"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:weightSum="100">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:inputType="textEmailAddress"
+                                android:layout_weight="30"
+                                android:text="@string/email"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/user_email_view"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="70"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:weightSum="100">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="30"
+                                android:text="@string/mobile"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/user_mobile_view"
+                                android:inputType="phone"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="70"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:weightSum="100">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="30"
+                                android:text="@string/hostel"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/user_hostel_view"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="70"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/pay_via_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Pay Via"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="18sp" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cod_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pay_via_text"
+                        android:layout_margin="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/payment_option_cod"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:id="@+id/payment_option_cod_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="100">
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_weight="15"
+                                    android:src="@drawable/money_purple" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="70"
+                                    android:text="@string/cod"
+                                    android:textSize="18sp" />
+
+                                <ImageView
+                                    android:id="@+id/cod_check"
+                                    android:layout_width="0dp"
+                                    android:layout_height="20dp"
+                                    android:layout_weight="15"
+                                    android:src="@drawable/check_gray" />
+
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/cod_pay_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/payment_option_cod_details"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/colorPurpleLight"
+                                android:text="@string/proceed_to_pay"
+                                android:textColor="@color/colorPrimary" />
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cod_card"
+                        android:layout_margin="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/payment_option_online"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:id="@+id/payment_option_online_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="100">
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_weight="15"
+                                    android:src="@drawable/credit_card_purple" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="70"
+                                    android:text="@string/online_payment"
+                                    android:textSize="18sp" />
+
+                                <ImageView
+                                    android:id="@+id/online_check"
+                                    android:layout_width="0dp"
+                                    android:layout_height="20dp"
+                                    android:layout_weight="15"
+                                    android:src="@drawable/check_gray" />
+
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/online_pay_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/payment_option_online_details"
+                                android:layout_marginTop="20dp"
+                                android:background="@color/colorPurpleLight"
+                                android:text="@string/proceed_to_pay"
+                                android:textColor="@color/colorPrimary" />
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical"
+    android:padding="10dp"
+    app:cardBackgroundColor="#FFF"
+    app:cardElevation="2dp">
+
+
+    <RelativeLayout
+        android:id="@+id/restaurant_item_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/item_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/veg"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/veg_icon" />
+
+
+            <TextView
+                android:id="@+id/restaurant_item_name_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@+id/veg"
+                android:text="TextView"
+                android:textColor="@color/text_black_87"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/restaurant_name_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/restaurant_item_name_view"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@+id/veg"
+                android:text="Lorem Ipsun Forum" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="6dp"
+                android:minWidth="50dp"
+                android:text="Rs. 150"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <!--<ImageView
+            android:id="@+id/ratingImageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/linearLayout"
+            android:layout_alignStart="@+id/veg"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/star_0" />-->
+        <LinearLayout
+            android:id="@+id/item_rating_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/item_info"
+            android:layout_below="@+id/item_info"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                android:id="@+id/item_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:srb_borderColor="@color/colorYellow"
+                app:srb_fillColor="@color/colorYellow"
+                app:srb_numberOfStars="5"
+                app:srb_rating="3"
+                app:srb_starBorderWidth="1"
+                app:srb_starCornerRadius="0"
+                app:srb_starSize="14dp"
+                app:srb_stepSize="0.5" />
+
+            <TextView
+                android:id="@+id/item_rating_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:text="(00)" />
+
+        </LinearLayout>
+
+        <ViewSwitcher
+            android:id="@+id/favourite_restaurant_item_add_to_cart_switcher"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/item_info">
+
+            <RelativeLayout
+                android:id="@+id/favourite_restaurant_item_add"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@color/colorPurpleLight">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="Add"
+                    android:textColor="#fff" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/favourite_restaurant_item_quantity_container"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/rectangle_border"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/favourite_restaurant_item_decrease_quantity"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_horizontal"
+                    android:text="-"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/favourite_restaurant_item_quantity"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@color/colorPurpleLight"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/favourite_restaurant_item_increase_quantity"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_horizontal"
+                    android:text="+"
+                    android:textColor="@color/colorPurpleLight"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+        </ViewSwitcher>
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

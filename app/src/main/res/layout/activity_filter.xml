@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/blank"
+    android:layout_marginTop="16dp"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text=" Apply Filters: "
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="107dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_margin="2dp"
+            android:layout_marginLeft="100dp"
+            android:background="@color/colorPurpleLight"
+            android:text="reset"
+            android:textColor="@color/colorPrimary" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPurpleLight" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/filter_offer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="selectItem" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:paddingBottom="10dp"
+                android:text="Offers"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/filter_free_delivery"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="selectItem" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:paddingBottom="10dp"
+                android:text="Free Delivery"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/filter_no_min_delivery_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="selectItem" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:paddingBottom="10dp"
+                android:text="No Minimum Delivery Amount"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPurpleLight" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text=" Sort By"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPurpleLight" />
+
+    <RadioGroup
+        android:id="@+id/sortBy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/deliveryPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Delivery Price"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/bestOffers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Best Offers"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/ratings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Ratings"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/minOrderAmmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Minimum Order Amount"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/filter_buttons">
+
+        <Button
+            android:id="@+id/applySort"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:background="@color/colorPurpleLight"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Apply Changes"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPurpleLight" />
+
+
+</LinearLayout>

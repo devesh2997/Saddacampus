@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:autofit="http://schemas.android.com/tools"
+    android:background="@color/cardview_light_background"
+    android:src="@drawable/blank"
+    app:cardElevation="5dp">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/item_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blank">
+
+                <RelativeLayout
+                    android:id="@+id/_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPurpleLight"
+                    android:elevation="0dp"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        android:id="@+id/item_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPurpleLight"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_horizontal"
+                        android:text="Item Name"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"
+                        android:layout_toEndOf="@+id/favourite_star_view"
+                        android:layout_toStartOf="@+id/cart_icon_container"/>
+
+                    <com.github.ivbaranov.mfb.MaterialFavoriteButton
+                        android:id="@+id/favourite_star_view"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        app:mfb_animate_favorite="true"
+                        app:mfb_favorite_image="@drawable/favourite_drawable"
+                        app:mfb_not_favorite_image="@drawable/heart_red"
+                        app:mfb_type="heart" />
+
+                    <RelativeLayout
+                        android:id="@+id/cart_icon_container"
+                        style="@android:style/Widget.ActionButton"
+                        android:layout_width="70dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/item_info_activity_cart_image"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:contentDescription="Notification Icon"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:src="@drawable/cart_white" />
+
+                        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:id="@+id/item_info_activity_cart_count_badge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignEnd="@id/item_info_activity_cart_image"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignTop="@id/item_info_activity_cart_image"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/cart_badge"
+                            android:gravity="center"
+                            android:minWidth="17sp"
+                            android:text="0"
+                            android:textColor="#ffffffff"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/item_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/_bar"
+                    android:background="@color/colorPurpleLight"
+                    android:elevation="0dp"
+                    android:paddingBottom="40dp">
+
+                    <TextView
+                        android:id="@+id/item_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Price : Rs. 100"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/item_order_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/item_price"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Ordered 56 times"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14sp" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/item_rating_container"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp">
+
+
+                        <TextView
+                            android:id="@+id/item_rating"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:paddingTop="2dp"
+                            android:text="3.7"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/item_rating_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@+id/item_rating"
+                            android:gravity="center"
+                            android:text="(327 times)"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="12sp" />
+
+                        <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                            android:id="@+id/item_rating_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="false"
+                            android:layout_below="@+id/item_rating_count"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="2dp"
+                            app:srb_borderColor="@color/colorAccent"
+                            app:srb_fillColor="@color/colorAccent"
+                            app:srb_isIndicator="true"
+                            app:srb_numberOfStars="5"
+                            app:srb_rating="3"
+                            app:srb_starBorderWidth="1"
+                            app:srb_starCornerRadius="0"
+                            app:srb_starSize="10dp"
+                            app:srb_stepSize="0.5" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentTop="true"
+                            android:background="@color/colorAccent" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:background="@color/colorAccent" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorAccent" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:background="@color/colorAccent" />
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/item_rating_by_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/item_rating_container"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="cursive"
+                        android:paddingStart="5dp"
+                        android:text="Your Rating = 4"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14sp" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/item_restaurant_info_separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/item_info"
+                    android:background="@color/colorPurpleLight" />
+
+
+                <LinearLayout
+                    android:id="@+id/restaurant_info_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_restaurant_info_separator"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Served By :"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPurple"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/restaurant_info_and_link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="0dp"
+                            android:paddingEnd="20dp"
+                            android:paddingStart="20dp">
+
+                            <ImageView
+                                android:id="@+id/restaurant_image"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/place_holder_color" />
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="75dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_toRightOf="@+id/restaurant_image">
+
+                                <TextView
+                                    android:id="@+id/restaurant_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="false"
+                                    android:text="Restaurant Name"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/min_order_amount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_above="@+id/delivery_charge"
+                                    android:text="Min. Order Amount : Rs.200"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/delivery_charge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:text="Delivery Charge : Rs.50"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+
+                            <TextView
+                                android:id="@+id/restaurant_state"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_margin="5dp"
+                                android:text="OPEN NOW"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorGrayLightText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/order_item_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/restaurant_info_container"
+                    android:orientation="vertical"
+                    android:layout_marginTop="0dp"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Order Now :"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPurple"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:scaleX="0.9"
+                            android:scaleY="0.9"
+                            android:weightSum="100">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="40"
+                                android:orientation="vertical">
+
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:paddingEnd="20dp"
+                                    android:paddingStart="20dp">
+
+                                    <TextView
+                                        android:id="@+id/select_quantity_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_marginTop="40dp"
+                                        android:text="Select Quantity : " />
+
+                                    <NumberPicker
+                                        android:id="@+id/item_quantity_numberpicker"
+                                        android:layout_width="60dp"
+                                        android:layout_height="100dp"
+                                        android:layout_toEndOf="@+id/select_quantity_text" />
+
+                                    <TextView
+                                        android:id="@+id/item_total"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/item_quantity_numberpicker"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:text="Total : Rs.450" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <Button
+                                android:layout_gravity="center"
+                                android:id="@+id/add_to_cart_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:layout_weight="60"
+                                android:background="@color/colorPurpleLight"
+                                android:text="@string/add_to_cart_button"
+                                android:textColor="@color/colorWhite" />
+
+                            <!--<FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="60"
+                                android:padding="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:baselineAligned="false"
+                                    android:orientation="vertical"
+                                    android:weightSum="100">
+
+                                    <Button
+                                        android:id="@+id/add_to_cart_button"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="2dp"
+                                        android:layout_weight="50"
+                                        android:background="@color/colorPurpleLight"
+                                        android:text="@string/add_to_cart_button"
+                                        android:textColor="@color/colorWhite" />
+
+                                    <Button
+                                        android:id="@+id/quick_checkout_button"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="2dp"
+                                        android:layout_weight="50"
+                                        android:background="@color/colorPurpleLight"
+                                        android:text="@string/quick_checkout_button"
+                                        android:textColor="@color/colorWhite" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/or_text_background"
+                                    android:elevation="4dp"
+                                    android:gravity="center"
+                                    android:text="OR"
+                                    android:textSize="14sp" />
+                            </FrameLayout>-->
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/order_item_container"
+                    android:orientation="vertical"
+                    android:paddingTop="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Recommended"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="16sp" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Top Rated"
+                                android:textColor="@color/colorPurpleLight"
+                                android:textStyle="bold" />
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/top_rated_items_recycler"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Popular"
+                                android:textColor="@color/colorPurpleLight"
+                                android:textStyle="bold" />
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/most_ordered_items_recycler"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/offer_container"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/offer_circle_bg"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_anchor="@id/item_restaurant_info_separator"
+            app:layout_anchorGravity="start">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/item_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    autofit:text="10" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:paddingBottom="2dp"
+                android:paddingEnd="3dp"
+                android:paddingStart="3dp"
+                android:paddingTop="2dp"
+                android:text="DISCOUNT"
+                android:textColor="@color/colorAccent"
+                android:textSize="6sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+        <com.saddacampus.app.app.Fab
+            android:id="@+id/fab"
+            style="@style/Widget.MaterialSheetFab.Fab"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="@dimen/fab_margin"
+            app:layout_anchor="@id/item_restaurant_info_separator"
+            app:layout_anchorGravity="end" />
+
+        <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <io.codetail.widget.RevealLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Sheet that contains your items -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/fab_sheet"
+                style="@style/Widget.MaterialSheetFab.Sheet"
+                app:layout_anchor="@id/item_info"
+                app:layout_anchorGravity="bottom|end">
+
+                <!-- Sheet items -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Rate Item -->
+                    <TextView
+                        android:id="@+id/fab_sheet_item_rate_item"
+                        style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                        android:layout_height="60dp"
+                        android:drawableStart="@drawable/rate_item_yellow"
+                        android:gravity="center_vertical"
+                        android:text="@string/fab_item_rate_item" />
+
+                    <!-- Favourites -->
+                    <TextView
+                        android:id="@+id/fab_sheet_item_add_to_favourites"
+                        style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                        android:layout_height="60dp"
+                        android:drawableStart="@drawable/add_to_favourites_yellow"
+                        android:gravity="center_vertical"
+                        android:text="@string/fab_item_add_to_favourites" />
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </io.codetail.widget.RevealLinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+
+
+</android.support.v7.widget.CardView>

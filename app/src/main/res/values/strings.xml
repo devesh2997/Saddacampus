@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Saddacampus</string>
+
+
+    <string name="facebook_app_id">810276729148775</string>
+    <string name="fb_login_protocol_scheme">fb810276729148775</string>
+
+
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="name_hint">Name</string>
+    <string name="mobile_hint">Mobile</string>
+    <string name="enter_otp_hint">Enter OTP</string>
+    <string name="sign_up_next_button">NEXT</string>
+    <string name="sign_up_link">SIGN UP NOW</string>
+    <string name="sign_in_or_text">OR</string>
+
+    <string name="sign_up_text">SIGN UP</string>
+
+    <string name="sign_up_otp_text1">Sit back &amp; Relax! while we verify your mobile number</string>
+    <string name="sign_up_otp_text2">(Enter the OTP below if we fail to detect the SMS automatically)</string>
+
+    <string name="fab_item_profile">Profile</string>
+    <string name="fab_item_favourites">Favourites</string>
+    <string name="fab_item_previous_orders">My Orders</string>
+    <string name="fab_item_go_to_cart">Go to Cart</string>
+    <string name="fab_item_add_to_favourites">Add to Favourites</string>
+    <string name="fab_item_remove_from_favourites">Remove from Favourites</string>
+    <string name="fab_item_rate_item">Rate this Item</string>
+
+    <string name="different_restaurant_alert_dialog_message">You can saddaOrder from only one restaurant at once. Do you want to Clear the cart and add the new item?</string>
+    <string name="different_restaurant_alert_dialog_title">Saddacampus Policy Violation</string>
+    <string name="alert_dialog_ok_button">OK</string>
+    <string name="alert_dialog_cancel_button">CANCEL</string>
+
+    <string name="add_to_cart_button">Add to Cart</string>
+
+    <string name="submit">submit</string>
+
+    <string name="checkout">checkout</string>
+    <string name="Delivery_details">Delivery Details</string>
+
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="mobile">Mobile</string>
+    <string name="hostel">Hostel</string>
+
+    <string name="cod">COD</string>
+    <string name="online_payment">Online Payment</string>
+
+    <string name="proceed_to_pay">Proceed To Pay</string>
+
+    <string name="order_placed_successfully">Your Order has been placed successfully. You will receive a confirmation SMS shortly.</string>
+
+
+</resources>

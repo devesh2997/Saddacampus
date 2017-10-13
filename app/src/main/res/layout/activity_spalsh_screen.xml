@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/blank"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_margin="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:src="@drawable/locationn"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="250dp"
+                android:layout_height="250dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:text="College:"
+                android:textSize="12sp" />
+
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPurpleLight"/>
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:background="@color/colorPurpleLight"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:onClick="submitLocationButton"/>
+
+    </LinearLayout>
+
+
+
+
+
+    <!--<Button
+        android:id="@+id/rating"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="rating"
+        android:onClick="rating"/>
+
+
+    <Button
+        android:id="@+id/general"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="general"
+        android:onClick="general"/>
+    <Button
+        android:id="@+id/news"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="subscribe to news"
+        android:onClick="news"/>
+
+
+    <Button
+        android:id="@+id/unews"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="unsubscribe from news"
+        android:onClick="unews"/>
+    <Button
+        android:id="@+id/drama"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="drama"
+        android:text="subscribe to drama"/>
+
+
+    <Button
+        android:id="@+id/udrama"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="unsubscribe from drama"
+        android:onClick="udrama"/>
+-->
+
+</RelativeLayout>
