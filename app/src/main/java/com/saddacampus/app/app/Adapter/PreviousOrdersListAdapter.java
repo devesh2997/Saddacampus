@@ -17,6 +17,8 @@ import com.saddacampus.app.app.Config.Config;
 import com.saddacampus.app.app.DataObjects.CartItem;
 import com.saddacampus.app.app.DataObjects.PreviousOrder;
 import com.squareup.picasso.Picasso;
+import com.zopim.android.sdk.api.ZopimChat;
+import com.zopim.android.sdk.model.VisitorInfo;
 
 import java.util.ArrayList;
 
@@ -149,6 +151,24 @@ public class PreviousOrdersListAdapter extends RecyclerView.Adapter<PreviousOrde
                     addOrderToCart(previousOrder);
                 }
             });
+
+            if(AppController.getInstance().getSessionManager().getKeyAuthProvider().equals(Config.KEY_FB_AUTH_PROVIDER)){
+                VisitorInfo visitorData = new VisitorInfo.Builder()
+                        .name(AppController.getInstance().getDbManager().getFacebookUserDetails().get("name"))
+                        .email(AppController.getInstance().getSessionManager().getFbUserSavedEmail())
+                        .phoneNumber(AppController.getInstance().getSessionManager().getFbUserSavedMobile())
+                        .note(previousOrder.getOrderId())
+                        .build();
+                ZopimChat.setVisitorInfo(visitorData);
+            }else if(AppController.getInstance().getSessionManager().getKeyAuthProvider().equals(Config.KEY_CUSTOM_AUTH_PROVIDER)){
+                VisitorInfo visitorData = new VisitorInfo.Builder()
+                        .name(AppController.getInstance().getDbManager().getUserDetails().get("name"))
+                        .email(AppController.getInstance().getDbManager().getUserDetails().get("email"))
+                        .phoneNumber(AppController.getInstance().getDbManager().getUserDetails().get("mobile"))
+                        .note(previousOrder.getOrderId())
+                        .build();
+                ZopimChat.setVisitorInfo(visitorData);
+            }
 
         }
 

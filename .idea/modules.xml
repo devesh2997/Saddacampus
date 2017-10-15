@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SaddaCampusTake1-workingDirectory.iml" filepath="$PROJECT_DIR$/SaddaCampusTake1-workingDirectory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Saddacampus.iml" filepath="$PROJECT_DIR$/Saddacampus.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

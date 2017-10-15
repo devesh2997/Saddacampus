@@ -83,8 +83,8 @@
 
                                     <LinearLayout
                                         android:id="@+id/restaurant_offer_container"
-                                        android:layout_width="100dp"
-                                        android:layout_height="100dp"
+                                        android:layout_width="85dp"
+                                        android:layout_height="85dp"
                                         android:background="@drawable/triangular_background"
                                         android:orientation="vertical">
 
@@ -188,10 +188,10 @@
                                         android:layout_below="@+id/restaurant_deliveryCharge_view"
                                         android:orientation="vertical"
                                         android:gravity="center">
-                                        <ImageView
+                                        <!--<ImageView
                                             android:layout_width="50dp"
                                             android:layout_height="50dp"
-                                            android:src="@drawable/free_delivery2"/>
+                                            android:src="@drawable/free_delivery2"/>-->
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -205,15 +205,16 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_below="@+id/restaurant_deliveryCharge_view"
-                                        android:orientation="vertical"
+                                        android:orientation="horizontal"
                                         android:gravity="center"
                                         android:layout_marginStart="80dp">
 
-                                        <ImageView
+                                        <!--<ImageView
                                             android:layout_width="50dp"
                                             android:layout_height="50dp"
                                             android:layout_below="@+id/restaurant_deliveryCharge_view"
-                                            android:src="@drawable/online_payment"/>
+                                            android:src="@drawable/online_payment"/>-->
+
 
                                         <TextView
                                             android:layout_width="wrap_content"
@@ -401,6 +402,15 @@
                         android:textSize="16sp"
                         android:background="@color/colorGreenLight2"/>
 
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/close_white"
+                        android:background="@color/colorGreenLight2"
+                        android:onClick="collapseReviews"/>
+
                     <!--<LinearLayout
                         android:id="@+id/restaurant_menu_recommendations_container"
                         android:layout_width="match_parent"
@@ -484,28 +494,36 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="60dp"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginTop="50dp">
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
 
                         <EditText
                             android:id="@+id/user_review_input"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
                             android:hint="Tell us what you think..."
                             android:inputType="text"
-                            android:imeOptions="actionDone"/>
+                            android:imeOptions="actionDone"
+                            android:layout_margin="5dp"
+                            android:layout_weight="90"/>
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/submit_review_button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Submit"
-                            android:layout_below="@+id/user_review_input"/>
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/send_bg"
+                            android:layout_margin="10dp"
+                            android:background="@color/colorWhite"
+                            android:scaleType="fitCenter"
+                            android:layout_weight="10"/>
 
-                    </RelativeLayout>
+                    </LinearLayout>
                 </RelativeLayout>
 
 

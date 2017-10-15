@@ -15,6 +15,7 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,6 +30,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -56,6 +58,7 @@ import com.saddacampus.app.helper.DBManager;
 import com.saddacampus.app.helper.RecommendationManager;
 import com.saddacampus.app.helper.SearchManager;
 import com.saddacampus.app.helper.SessionManager;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
@@ -108,7 +111,8 @@ public class RestaurantMenu extends AppCompatActivity implements View.OnClickLis
     //Restaurant review views
     RecyclerView restaurantReviewsRecycler;
     EditText userReviewInput;
-    Button submitUserReviewButton;
+    ImageButton submitUserReviewButton;
+    SlidingUpPanelLayout reviewsSlider;
 
     //Restaurant recommendations views
     RecyclerView restaurantTopRatedItemsRecycler;
@@ -243,7 +247,8 @@ public class RestaurantMenu extends AppCompatActivity implements View.OnClickLis
         //Initialising restaurant review views.
         restaurantReviewsRecycler = (RecyclerView)findViewById(R.id.restaurant_reviews_recycler);
         userReviewInput = (EditText)findViewById(R.id.user_review_input);
-        submitUserReviewButton = (Button)findViewById(R.id.submit_review_button);
+        submitUserReviewButton = (ImageButton) findViewById(R.id.submit_review_button);
+        reviewsSlider = (SlidingUpPanelLayout)findViewById(R.id.sliding_layout);
 
         //initialising restaurant recommendations views
         /*restaurantTopRatedItemsRecycler = (RecyclerView)findViewById(R.id.restaurant_menu_top_rated_items_recycler);
@@ -266,7 +271,12 @@ public class RestaurantMenu extends AppCompatActivity implements View.OnClickLis
         submitUserReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                submitUserReview();
+                if(!userReviewInput.getText().toString().equals("")){
+                    submitUserReview();
+                }else{
+                    Toast.makeText(RestaurantMenu.this,"Enter your review first !",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -320,6 +330,8 @@ public class RestaurantMenu extends AppCompatActivity implements View.OnClickLis
 
 
         //setupFab();
+
+
 
     }
 
@@ -879,5 +891,9 @@ public class RestaurantMenu extends AppCompatActivity implements View.OnClickLis
 
         AppController.getInstance().addToRequestQueue(stringRequest);
 
+    }
+
+    public void collapseReviews(View v){
+        reviewsSlider.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
     }
 }
