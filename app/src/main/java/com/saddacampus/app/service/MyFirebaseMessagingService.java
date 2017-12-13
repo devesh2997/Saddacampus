@@ -11,15 +11,12 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.saddacampus.app.activity.MainActivity;
 import com.saddacampus.app.app.Config.Config;
 import com.saddacampus.app.app.util.NotificationUtils;
+import com.saddacampus.app.helper.FirebaseNotificationManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
-
-/**
- * Created by shubham on 24/07/17.
- */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = MyFirebaseMessagingService.class.getSimpleName();
@@ -33,6 +30,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if (remoteMessage == null)
             return;
 
+        /*if(remoteMessage.getData()!=null && remoteMessage.getData().get("type").equals("new_order")){
+            String type = remoteMessage.getData().get("type");
+            FirebaseNotificationManager notificationManager = new FirebaseNotificationManager();
+            notificationManager.createNotification(this,type,remoteMessage.getNotification(),remoteMessage.getData());
+            Log.d(TAG, "Message Notification Body: " +remoteMessage.getData().get("title"));
+        }*/
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
             Log.e(TAG, "Notification Body: " + remoteMessage.getNotification().getBody());

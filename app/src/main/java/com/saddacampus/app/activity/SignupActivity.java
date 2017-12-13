@@ -310,6 +310,7 @@ public class SignupActivity extends AppCompatActivity {
                         //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(getApplicationContext(), requestForSmsMessage, Toast.LENGTH_SHORT).show();
+                        signUpButton.setEnabled(true);
                     }
 
 

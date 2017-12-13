@@ -10,8 +10,13 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.saddacampus.app.activity.CheckoutActivity;
@@ -86,7 +91,6 @@ public class OrderManager {
                     if(!responseObject.getBoolean("error")){
 
                         if(responseObject.getBoolean("is_open")){
-                            //Todo
                             Intent intent = new Intent(context, PostOrderStatusActivity.class);
                             intent.putExtra("mode","COD");
                             intent.putExtra("current_order_cart",AppController.getInstance().getCartManager().getCart());
@@ -146,7 +150,7 @@ public class OrderManager {
                 return params;
             }
         };
-        strReq.setRetryPolicy(new DefaultRetryPolicy(25000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        strReq.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS *2,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         AppController.getInstance().addToRequestQueue(strReq);
 
     }
@@ -191,6 +195,17 @@ public class OrderManager {
             public void onErrorResponse(VolleyError error) {
                 //Log.e(TAG,error.getMessage());
                 progressDialog.dismiss();
+                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+                    Log.d(TAG,"Timeout error");
+                } else if (error instanceof AuthFailureError) {
+                    Log.d(TAG,"AuthFailureError");
+                } else if (error instanceof ServerError) {
+                    Log.d(TAG,"ServerError");
+                } else if (error instanceof NetworkError) {
+                    Log.d(TAG,"NetworkError");
+                } else if (error instanceof ParseError) {
+                    Log.d(TAG,"ParseError");
+                }
                 Intent intent = new Intent(context,NoInternetActivity.class);
                 context.startActivity(intent);
                 //Toast.makeText(context,error.getMessage(), Toast.LENGTH_SHORT).show();

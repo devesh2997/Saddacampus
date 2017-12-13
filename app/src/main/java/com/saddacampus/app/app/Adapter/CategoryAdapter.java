@@ -50,7 +50,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         CategoryViewHolder viewHolder = new CategoryViewHolder(view);
 
         return viewHolder;
-        // }
+
     }
 
 

@@ -3,8 +3,11 @@ package com.saddacampus.app.service;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -12,12 +15,20 @@ import com.android.volley.toolbox.StringRequest;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
+import com.saddacampus.app.activity.MainActivity;
+import com.saddacampus.app.app.Adapter.CategoryAdapter;
 import com.saddacampus.app.app.AppController;
 import com.saddacampus.app.app.Config.Config;
+import com.saddacampus.app.app.DataObjects.Category;
 import com.saddacampus.app.helper.SessionManager;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by shubham on 24/07/17.
@@ -49,9 +60,47 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);
     }
 
-    private void sendRegistrationToServer(final String token) {
+    public void sendRegistrationToServer(final String token) {
         // sending gcm token to server
         Log.e(TAG, "sendRegistrationToServer: " + token);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.URL_UPDATE_USER_FIREBASE_TOKEN, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, response);
+                try {
+                    JSONObject responseObj = new JSONObject(response);//creating json object from string request
+                    if(responseObj.getBoolean("error")){
+                        //Todo
+                        //token updated
+                    }else{
+                        //Todo
+                        //some error occurred
+                    }
+
+
+                } catch (JSONException e) {
+
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+
+                //  Log.e("Sub Category Activity  line no. 204", error.getMessage());
+
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("UID", AppController.getInstance().getDbManager().getUserUid());
+                params.put("token",token);
+
+                return params;
+            }
+        };
+        AppController.getInstance().addToRequestQueue(stringRequest);
     }
 
     public void getFireBaseKey(){

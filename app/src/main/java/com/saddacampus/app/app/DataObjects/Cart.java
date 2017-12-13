@@ -149,6 +149,17 @@ public class Cart implements Serializable{
         return price;
     }
 
+    public double getBillingAmount(){
+        double amount = getTotalAfterDiscount();
+
+        if(amount<getRestaurantInCart().getDeliveryChargeSlab()){
+            amount = amount + getRestaurantInCart().getDeliveryCharges();
+        }
+
+
+        return amount;
+    }
+
     public Cart clearCart(){
         this.cartItems = new LinkedList<>();
 

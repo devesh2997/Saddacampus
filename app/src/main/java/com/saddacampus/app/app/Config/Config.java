@@ -8,7 +8,7 @@ public class Config {
     // URL configuration for live server
     //public static final String URL_SADDACAMPUS_SERVER = "http://www.saddacampus.in/app/";
     //public static final String URL_SADDACAMPUS_SERVER = "http://172.16.133.243/fuck/";
-   public static final String URL_SADDACAMPUS_SERVER = "http://saddacampus.com/app/appAPIs/";
+   private static final String URL_SADDACAMPUS_SERVER = "http://www.saddacampus.com/app/appAPIs-v2/";
     //public static final String URL_SADDACAMPUS_SERVER = "http://192.168.43.16/appAPIs/";
 
     public static final String URL_REQUEST_SMS = URL_SADDACAMPUS_SERVER + "request_sms.php";
@@ -46,7 +46,9 @@ public class Config {
 
     public static final String URL_SUBMIT_ORDER_RATING= URL_SADDACAMPUS_SERVER + "submit_order_rating.php";
 
-    public static final String URL_GET_CITIES = URL_SADDACAMPUS_SERVER + "get_cities.php";
+    public static final String URL_UPDATE_USER_FIREBASE_TOKEN = URL_SADDACAMPUS_SERVER + "update_user_firebase_token.php";
+
+ public static final String URL_GET_CITIES = URL_SADDACAMPUS_SERVER + "get_cities.php";
 
     public static final int RATING_ALERT_DURATION = 7300000;
     //public static final int RATING_ALERT_DURATION = 61000;

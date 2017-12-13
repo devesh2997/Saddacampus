@@ -36,6 +36,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.saddacampus.app.R;
 import com.saddacampus.app.app.AppController;
 import com.saddacampus.app.app.Config.Config;
@@ -165,6 +166,7 @@ public class LoginActivity extends AppCompatActivity {
                                                    if(dbManager.addFacebookUser(object.getString("id"),object.getString("name"))){
                                                         progressDialog.dismiss();
                                                        sessionManager.setLogin(true,Config.KEY_FB_AUTH_PROVIDER);
+                                                       AppController.getInstance().getUserManager().sendRegistrationToServer(FirebaseInstanceId.getInstance().getToken());
                                                         Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                                                         startActivity(intent);
                                                         finish();
@@ -306,6 +308,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (!signInError) {
                         if (!sessionManager.isLoggedIn()) {
                             sessionManager.setLogin(true, Config.KEY_CUSTOM_AUTH_PROVIDER);
+                            AppController.getInstance().getUserManager().sendRegistrationToServer(FirebaseInstanceId.getInstance().getToken());
                         }
 
                         String uid = responseObj.getString("uid");

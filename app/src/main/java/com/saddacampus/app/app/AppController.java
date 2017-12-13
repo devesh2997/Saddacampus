@@ -13,6 +13,7 @@ import com.instamojo.android.Instamojo;
 import com.saddacampus.app.helper.CartManager;
 import com.saddacampus.app.helper.DBManager;
 import com.saddacampus.app.helper.SessionManager;
+import com.saddacampus.app.helper.UserManager;
 import com.zopim.android.sdk.api.ZopimChat;
 
 /**
@@ -29,6 +30,8 @@ public class AppController extends Application{
     private SessionManager sessionManager;
 
     private DBManager dbManager;
+
+    private UserManager userManager;
 
     private static AppController mInstance;
 
@@ -48,6 +51,7 @@ public class AppController extends Application{
         cartManager = new CartManager(this);
         sessionManager = new SessionManager(this);
         dbManager = new DBManager(this);
+        userManager = new UserManager(this);
         Instamojo.initialize(this);
         ZopimChat.init("4BmfjBmUP6R94lneZtYWogbq3CMfGNDK");
 
@@ -86,6 +90,8 @@ public class AppController extends Application{
             mRequestQueue.cancelAll(tag);
         }
     }
+
+    public UserManager getUserManager(){return userManager;}
 
     public CartManager getCartManager(){
         return cartManager;

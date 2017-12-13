@@ -173,7 +173,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_alignParentEnd="true"
-                                        android:text="1591"
+                                        android:text="--"
                                         android:textSize="14dp" />
 
                                 </RelativeLayout>
@@ -272,7 +272,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_alignParentEnd="true"
-                                        android:text="1291"
+                                        android:text="--"
                                         android:textColor="@color/text_black_87"
                                         android:textSize="16sp"
                                         android:textStyle="bold" />

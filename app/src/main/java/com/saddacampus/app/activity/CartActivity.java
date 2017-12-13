@@ -217,10 +217,8 @@ public class CartActivity extends AppCompatActivity {
             Cart cart = AppController.getInstance().getCartManager().getCart();
             deliveryChargeLoading.setVisibility(View.GONE);
             discountLoading.setVisibility(View.GONE);
-            float payableAmount = (float)cart.getTotalAfterDiscount();
-            if(cart.getRestaurantInCart().getDeliveryChargeSlab()> cart.getTotalBeforeDiscount()){
+            if(cart.getRestaurantInCart().getDeliveryChargeSlab()> cart.getTotalAfterDiscount()){
                 deliveryCharge.setText(String.valueOf(cart.getRestaurantInCart().getDeliveryCharges()));
-                payableAmount = payableAmount + cart.getRestaurantInCart().getDeliveryCharges();
             }else{
                 deliveryCharge.setText("0");
             }
@@ -239,7 +237,7 @@ public class CartActivity extends AppCompatActivity {
             discountByRestaurantView.setText(String.valueOf(discountApplied));
 
 
-            payableAmountView.setText(String.valueOf(payableAmount));
+            payableAmountView.setText(String.valueOf(cart.getBillingAmount()));
             checkoutButton.setVisibility(View.VISIBLE);
             checkoutButton.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -310,7 +310,7 @@ public class CartManager {
     }
 
     public boolean isOrderAmountValid(){
-        if(getCart().getTotalAfterDiscount()>=Double.parseDouble(getCart().getRestaurantInCart().getMinOrderAmount())){
+        if(getCart().getBillingAmount()>=Double.parseDouble(getCart().getRestaurantInCart().getMinOrderAmount())){
             return true;
         }else{
             return false;

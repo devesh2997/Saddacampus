@@ -103,11 +103,7 @@ public class PreviousOrdersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_previous_orders);
 
         previousOrdersRecycler = (RecyclerView)findViewById(R.id.previous_orders_recycler);
-        /*progressBar = (ProgressBar)findViewById(R.id.previous_orders_progress);
-        ChasingDots chasingDots = new ChasingDots();
-        chasingDots.setColor(getResources().getColor(R.color.colorAccent));
-        progressBar.setIndeterminateDrawable(chasingDots);
-        progressBar.setVisibility(View.VISIBLE);*/
+
 
 
         overridePendingTransition(R.anim.activity_open_translate,R.anim.activity_close_scale);

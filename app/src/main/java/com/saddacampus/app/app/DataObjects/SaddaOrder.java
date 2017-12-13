@@ -31,7 +31,7 @@ public class SaddaOrder implements Serializable{
         this.userHostel = userHostel;
         this.userRoom = userRoom;
 
-        this.cartTotal = AppController.getInstance().getCartManager().getCart().getTotalAfterDiscount();
+        this.cartTotal = AppController.getInstance().getCartManager().getCart().getBillingAmount();
 
         this.userCity = getSelectedCity();
         this.restaurant = AppController.getInstance().getCartManager().getCurrentRestaurantInCart();
